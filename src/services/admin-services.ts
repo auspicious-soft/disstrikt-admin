@@ -17,3 +17,15 @@ export const logOutService = async (route: string) => {
   const axiosInstance = await getAxiosInstance();
   return axiosInstance.post(route);
 };
+
+
+//----------Subscription Page--------------------------
+export const getSubscriptionDetails = async (route: string) => {
+    const axiosInstance = await getAxiosInstance()
+    return axiosInstance.get(route);
+}
+
+export const updateSubscriptionPlan = async (route: string, payload:any) =>{
+  const axiosInstance = await getAxiosInstance()
+  return axiosInstance.put(route, payload);
+}

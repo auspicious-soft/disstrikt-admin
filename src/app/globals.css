@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #171717; /* Matches Tailwind's neutral-900 */
+  --foreground: #ededed; /* Matches Tailwind's stone-200 for text */
 }
 
 @theme inline {
@@ -14,7 +14,7 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
+    --background: #171717; /* Consistent with bg-neutral-900 */
     --foreground: #ededed;
   }
 }
@@ -23,26 +23,34 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: 'Kodchasan', sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease; /* Added transition to body */
 }
 
+/* Apply background and transition to the content area */
+.content-area {
+  background-color: var(--background); /* Inherit from root */
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Background blur glow */
 .bg-blur-glow {
   position: absolute;
   width: 916px;
   height: 916px;
   top: 54px;
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: rgba(254, 202, 202, 0.2); /* Tailwind's rose-200/20 */
+  left: 262px;
+  background-color: rgba(254, 202, 202, 0.2); /* Matches Tailwind's rose-200/20 */
   filter: blur(250px);
   z-index: 0;
   pointer-events: none;
 }
 
+/* Dark mode overrides */
 .dark {
-  background-color: #0f1416; /* Adjust as needed */
-  color: #ffffff;
+  background-color: var(--background); /* Use #171717 instead of #0f1416 */
+  color: var(--foreground);
 }
-
+/* Font face declarations */
 @font-face {
   font-family: 'Kodchasan';
   src: url('/fonts/Kodchasan-LightItalic.ttf') format('truetype');
@@ -77,7 +85,6 @@ body {
   font-weight: 600;
   font-style: italic;
 }
-
 
 @font-face {
   font-family: 'Kodchasan';
@@ -148,4 +155,3 @@ body {
   font-weight: 300;
   font-style: italic;
 }
-

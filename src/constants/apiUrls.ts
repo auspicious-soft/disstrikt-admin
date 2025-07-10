@@ -9,3 +9,9 @@ export const AUTH_URLS = {
   RESET_PASSWORD: `${API_BASE_ADMIN}/reset-password`,
   PROFILE: `${API_BASE_ADMIN}/profile`,
 };
+
+
+export const ADMIN_URLS ={
+  GET_SUBSCRIPTIONS: `${API_BASE_ADMIN}/price-plan`,
+  UPDATE_SUBSCRIPTION_PLAN: `${API_BASE_ADMIN}/price-plan`
+}

@@ -1,9 +1,13 @@
 // lib/icons.ts
-import { LayoutDashboard, Users, Utensils, Award, FileText, Ticket } from "lucide-react";
+import { User, Clipboard , Award, FileText, Ticket } from "lucide-react";
+import { Home } from 'lucide-react';
+import { Settings } from "lucide-react";
 
-export const DashboardIcon = LayoutDashboard;
-export const UserIcon = Users;
-export const RestaurantsIcon = Utensils;
+export const DashboardIcon = Home;
+export const UserIcon = User;
+export const ReviewtaskIcon = Clipboard ;
 export const AchievementsIcon = Award;
 export const Policies = FileText;
 export const CoupanIcon = Ticket;
+export const SettingsIcon = Settings;
+
